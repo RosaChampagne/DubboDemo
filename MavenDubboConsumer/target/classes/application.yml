@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: Dubbo-Consumer
+dubbo:
+  application:
+    id: Dubbo-Consumer
+    name: Dubbo-Consumer
+    version: 1.0.0
+  registry:
+    protocol: zookeeper
+    address: 192.168.174.129:2181,192.168.174.129:2182,192.168.174.129:2183
+    id: Dubbo-Consumer-Registry
+management:
+  endpoint:
+    dubbo-configs:
+      enabled: true
+    dubbo:
+      enabled: true
+    dubbo-services:
+      enabled: true
+    dubbo-properties:
+      enabled: true
+    dubbo-shutdown:
+      enabled: true
+    dubbo-references:
+      enabled: true
+  health:
+    dubbo:
+      status:
+        defaults: memory
+        extras: load,threadpool
+  endpoints:
+    web:
+      exposure:
+        include: '*'

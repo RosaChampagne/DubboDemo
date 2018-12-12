@@ -1,0 +1,20 @@
+
+dubbo:
+  registry:
+    protocol: zookeeper
+    address: 192.168.174.129:2181,192.168.174.129:2182,192.168.174.129:2183
+    id: Demo-Registry
+  protocol:
+    port: 12345
+    name: dubbo
+    id: dubbo
+    status: server
+  application:
+    name: Demo-Provider
+    id: Demo-Provider
+    qos-enable: true
+    qos-port: 22222
+  scan:
+    basePackages: cn.com.dubbo.respository.impl
+  service:
+    version: 1.0.0
